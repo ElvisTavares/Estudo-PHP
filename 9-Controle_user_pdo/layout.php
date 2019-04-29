@@ -19,6 +19,10 @@
 		th, td {
 			padding: 15px;
 		}
+
+		th{
+			text-align: center;
+		}
 	</style>
 </head>
 <body>
