@@ -1,11 +1,11 @@
 <?php
 
 class Conta1{
-	private $nome;
-	private $balance;
+	var $nome;
+	var $balance;
 
 
-	function Conta($nome, $balance){
+	function __construct($nome, $balance){
 		$this->nome = $nome;
 		
 
@@ -26,14 +26,15 @@ class Conta1{
 	public function getBalance(){
 		return $this->balance;
 	}
+	public function setNome($nome){
+		$this->nome = $nome;
+	}
 
 	public function getNome(){
 		return $this->nome;
 	}
 
-	public function setNome($nome){
-		$this->nome = $nome;;
-	}
+	
 
 
 }

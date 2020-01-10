@@ -5,7 +5,7 @@ class Caneta2{
 	private $ponta;
 	private $cor;
 
-
+ //Contrutor
 	public function __construct(){
 		$this->modelo = "Bic";
 		$this->ponta = "0.5";
