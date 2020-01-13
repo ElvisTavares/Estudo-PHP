@@ -1,7 +1,43 @@
 <?php
+$user_autent = false;
 
-print_r($_GET);
+$usuarios_app = array(
+    array('email' => 'adm@teste.com','senha' =>'1234'),
+    array('email'=>'eu@teste.com', 'senha' =>'loko'),
+);
 
-echo "<br>";
-echo $_GET['email'];
-echo $_GET['senha'];
+foreach($usuarios_app as $user){
+
+
+    if($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha']){
+        $user_autent = true;
+    }
+
+    if($user_autent){
+        echo "OK";
+
+    }else{
+        
+        header('Location: index.php?login=erro');
+    }
+}
+
+/*
+foreach($usuarios_app as $user){
+    print_r($user);
+    echo "<hr>";
+        echo "Usuario app: ". $user['email']. " - ". $user['senha'];
+    echo "<br>";
+    echo "Usuario formulario: " . $_POST['email']. " - ". $_POST['senha'];
+    echo "<br>";
+}
+
+echo "<pre>";
+print_r ($usuarios_app);
+echo "</pre>";
+*/
+//print_r($_GET);
+
+//echo "<br>";
+//echo $_GET['email'];
+//echo $_GET['senha'];
