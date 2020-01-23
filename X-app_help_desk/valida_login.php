@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+
+//$_SESSION['x'] = 'Lalala';
+
+//print_r($_SESSION);
+
+
 $user_autent = false;
 
 $usuarios_app = array(
@@ -14,10 +22,12 @@ foreach($usuarios_app as $user){
     }
 
     if($user_autent){
-        echo "OK";
+        //echo "OK";
+        $_SESSION['autenticado'] = "SIM";
+         header('Location: home.php');
 
     }else{
-        
+        $SESSION['autenticado'] = "NAO";
         header('Location: index.php?login=erro');
     }
 }

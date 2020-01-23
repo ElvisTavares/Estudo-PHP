@@ -1,7 +1,9 @@
 <?php
-  if(isset($_GET['login'])){
-    echo ($_GET['login']);
-  }
+ // if(isset($_GET['login'])){
+  //  echo ($_GET['login']);
+ // }
+
+
 
 ?>
 
@@ -47,6 +49,18 @@
                 <div class="form-group">
                   <input type="password" name="senha" class="form-control" placeholder="Senha">
                 </div>
+
+
+                <?php
+                  if (isset($_GET['login']) && $_GET['login']== 'erro2') {
+                    # code...
+                    ?>
+                      <div class="text-danger">
+                        Faça login
+                      </div>
+                    <?php
+                  }
+                ?>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
               </form>
             </div>
