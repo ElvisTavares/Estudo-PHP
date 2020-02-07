@@ -1,6 +1,8 @@
 <?php include_once "validador_acesso.php"; ?>
 
 <?php  
+
+  print_r($_SESSION);
 //abrir arquivo, r = leitura
   $arquivo = fopen('arquivo.hd', 'r');
 
@@ -87,9 +89,9 @@
 
               <div class="card mb-3 bg-light">
                 <div class="card-body">
-                  <h5 class="card-title"><?php echo $chamado_dados[0];  ?></h5>
-                  <h6 class="card-subtitle mb-2 text-muted"><?php echo $chamado_dados[1]; ?> </h6>
-                  <p class="card-text"><?php echo $chamado_dados[2]; ?></p>
+                  <h5 class="card-title"><?php echo $chamado_dados[1];  ?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?php echo $chamado_dados[2]; ?> </h6>
+                  <p class="card-text"><?php echo $chamado_dados[3]; ?></p>
 
                 </div>
               </div>
