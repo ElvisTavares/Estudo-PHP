@@ -11,7 +11,7 @@ $user_autent = false;
 $usuario_id = null;
 $usuario_perfil_id = null;
 
-$perfil_id = array(1=> 'Administrativo', 2=> 'Usuario');
+$perfis = array(1 => 'Administrativo', 2 => 'Usuario');
 
 $usuarios_app = array(
     array('id'=> 1, 'email' => 'adm@teste.com','senha' =>'1234', 'perfil_id' => 1),
@@ -33,7 +33,7 @@ foreach($usuarios_app as $user){
         //echo "OK";
         $_SESSION['autenticado'] = "SIM";
         $_SESSION['id'] = $usuario_id;
-        $_SESSION['perfil_id'] = $usuario_perfi_id;
+        $_SESSION['perfil_id'] = $usuario_perfil_id;
          header('Location: home.php');
 
     }else{

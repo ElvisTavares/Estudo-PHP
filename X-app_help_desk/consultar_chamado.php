@@ -1,7 +1,7 @@
 <?php include_once "validador_acesso.php"; ?>
 
 <?php  
-
+$chamados = array();
   print_r($_SESSION);
 //abrir arquivo, r = leitura
   $arquivo = fopen('arquivo.hd', 'r');
@@ -14,6 +14,23 @@
 
     //criar array
     $chamados[] = $linhas;
+    
+    $chamado_dados = explode('#', $linhas);
+    print_r($chamado_dados);
+
+    
+      if($_SESSION['perfil_id'] == 2){
+        
+        if($_SESSION['id'] != $chamado_dados[0]){
+          continue;
+        }else{
+          $chamados[] = $linhas;
+        }
+      }else{
+        $chamados[] = $linhas;
+      }
+    
+    
   }
 
     //fechar arquivo
@@ -75,6 +92,15 @@
                 //echo $chamado ."<br>" ;
                 //array com delimitador
                 $chamado_dados = explode('#' ,$chamado);
+
+
+                // //verifica o nivel de usuario
+                // if ($_SESSION['perfil_id'] == 2){
+
+                //   if($chamado_dados[0] != $_SESSION['id']){
+                //     continue;
+                //   }
+                // }
 
                 if(count($chamado_dados) < 3){
                   continue;
