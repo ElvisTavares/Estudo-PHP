@@ -6,7 +6,7 @@ function twoSum($nums, $target)
 
 for ($i=0; $i < count($nums); $i++) { 
     $complement = $target - $nums[$i]; //Calcula a diferença entre o alvo e o numero atual
-
+var_dump($numToIndex);
     //verifica se o complemento ja existe no mapa
     if(isset($numToIndex[$complement])) {
         return array($numToIndex[$complement], $i);
