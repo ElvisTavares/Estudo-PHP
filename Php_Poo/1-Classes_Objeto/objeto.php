@@ -17,3 +17,4 @@ $produto2->descricao = 'io';
 $produto1->ImprimeEtiqueta();
 echo "<br>";
 $produto2->ImprimeEtiqueta();
+
